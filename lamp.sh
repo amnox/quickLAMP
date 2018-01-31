@@ -12,7 +12,7 @@ if [ "$1" == "apache" ]; then
     sudo apt-get install apache2
     sudo apache2ctl configtest
     #Change server_domain_or_IP and uncomment below line
-    #sudo sed -e "\$aServerName $2" /etc/apache2/apache2.conf >> /etc/apache2/apache2.conf
+    sudo sed -e "\$aServerName $2" /etc/apache2/apache2.conf >> /etc/apache2/apache2.conf
     sudo ufw app info "Apache Full"
     sudo apache2ctl configtest
     sudo systemctl restart apache2
